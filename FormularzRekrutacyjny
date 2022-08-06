@@ -1,6 +1,6 @@
 {
   "name": "rekrutacja",
-  "permissions": "ADMINISTRATOR",
+  "permissions": "NONE",
   "permissions2": "NONE",
   "restriction": "1",
   "_id": "MoZdG",
@@ -246,5 +246,6 @@
       "required": true,
       "choices": null
     }
-  ]
+  ],
+  "description": "Wysyła formularz rekrutacyjny"
 }
