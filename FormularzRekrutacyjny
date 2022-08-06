@@ -11,7 +11,7 @@
       "permission": "ADMINISTRATOR",
       "branch": {
         "iftrue": "3",
-        "iffalse": "1",
+        "iffalse": "0",
         "iftrueVal": "4"
       },
       "name": "Check Member Permissions"
@@ -41,7 +41,7 @@
         }
       ],
       "reply": true,
-      "ephemeral": false,
+      "ephemeral": true,
       "tts": false,
       "overwrite": false,
       "dontSend": false,
@@ -237,5 +237,14 @@
       "name": "Send Message"
     }
   ],
-  "comType": "0"
+  "comType": "4",
+  "parameters": [
+    {
+      "name": "channel",
+      "description": "kanał na który ma wysłac formularz rekrutacyjny",
+      "type": "CHANNEL",
+      "required": true,
+      "choices": null
+    }
+  ]
 }
