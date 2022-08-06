@@ -1,0 +1,241 @@
+{
+  "name": "rekrutacja",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "MoZdG",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "ADMINISTRATOR",
+      "branch": {
+        "iftrue": "3",
+        "iffalse": "1",
+        "iftrueVal": "4"
+      },
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "RANDOM",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "```CMD: NIE POSIADASZ PERMISJI```",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "icon",
+      "name": "Store Server Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [
+        {
+          "name": "Kliknij aby wypełnic",
+          "type": "SUCCESS",
+          "id": "msg-button-b1cafa3",
+          "row": "",
+          "url": "",
+          "emoji": "",
+          "mode": "PUBLIC",
+          "time": "",
+          "actions": [
+            {
+              "title": "Rekrutacja na <nazwa rangi>",
+              "textInputs": [
+                {
+                  "name": "Pytanie Numer 1",
+                  "placeholder": "",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "rekru1",
+                  "row": "",
+                  "style": "PARAGRAPH",
+                  "required": "true"
+                },
+                {
+                  "name": "Pytanie Numer 2",
+                  "placeholder": "",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "rekru2",
+                  "row": "",
+                  "style": "PARAGRAPH",
+                  "required": "true"
+                },
+                {
+                  "name": "Pytanie Numer 3",
+                  "placeholder": "",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "rekru3",
+                  "row": "",
+                  "style": "PARAGRAPH",
+                  "required": "true"
+                },
+                {
+                  "name": "Pytanie Numer 4",
+                  "placeholder": "",
+                  "minLength": "0",
+                  "maxLength": "1000",
+                  "id": "rekru4",
+                  "row": "",
+                  "style": "PARAGRAPH",
+                  "required": "true"
+                },
+                {
+                  "name": "Pytanie Numer 5",
+                  "placeholder": "",
+                  "minLength": "20",
+                  "maxLength": "1000",
+                  "id": "rekru5",
+                  "row": "",
+                  "style": "PARAGRAPH",
+                  "required": "true"
+                }
+              ],
+              "name": "Show Modal"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RED",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "Wysłano!",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            },
+            {
+              "channel": "103",
+              "varName": "<ID KANALU NA KTÓRY MA WYSYŁAC WIADOMOŚCI>",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "#000000",
+                  "timestamp": "false",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "Pytania rekrutacyjne ${member}\n\n**Odpowiedz na 1 pytanie:** (Ile masz lat?)\n${tempVars(\"rekru1\")} \n**Odpowiedz na 2 pytanie:** (Masz jakieś doświadczenie?)\n${tempVars(\"rekru2\")}\n**Odpowiedz na 3 pytanie:** (Jesteś już gdzieś supportem bądz kims wyżej?)\n${tempVars(\"rekru3\")}\n**Odpowiedz na 4 pytanie:** (Co byś wniósł do naszego serwera)\n${tempVars(\"rekru4\")}\n**Odpowiedz na 5 pytanie:** (Opowiedz nam coś o sobie)\n${tempVars(\"rekru5\")}",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Rekrutacja na <Nazwa Rangi>",
+          "url": "",
+          "color": "#000000",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "Aby wziaść udział w rekrutacji kliknij w przycisk poniżej i wypełnij formularz",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}
