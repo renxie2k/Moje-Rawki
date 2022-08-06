@@ -1,6 +1,6 @@
 {
   "name": "rekrutacja",
-  "permissions": "NONE",
+  "permissions": "ADMINISTRATOR",
   "permissions2": "NONE",
   "restriction": "1",
   "_id": "MoZdG",
@@ -10,7 +10,7 @@
       "varName": "",
       "permission": "ADMINISTRATOR",
       "branch": {
-        "iftrue": "3",
+        "iftrue": "2",
         "iffalse": "0",
         "iftrueVal": "4"
       },
@@ -216,7 +216,7 @@
           "timestamp": "false",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "Aby wziaść udział w rekrutacji kliknij w przycisk poniżej i wypełnij formularz",
+          "description": "Aby wziąć udział w rekrutacji kliknij w przycisk poniżej i wypełnij formularz",
           "fields": [],
           "author": "",
           "authorUrl": "",
