@@ -163,8 +163,8 @@
             {
               "member": "5",
               "varName": "użytkownik",
-              "dataName": "rep-poz",
-              "changeType": "0",
+              "dataName": "12",
+              "changeType": "1",
               "value": "1",
               "name": "Control Member Data"
             },
@@ -212,8 +212,8 @@
             {
               "member": "5",
               "varName": "użytkownik",
-              "dataName": "rep-neg",
-              "changeType": "0",
+              "dataName": "123",
+              "changeType": "1",
               "value": "1",
               "name": "Control Member Data"
             },
