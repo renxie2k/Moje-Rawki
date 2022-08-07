@@ -61,7 +61,7 @@
       "branch": {
         "iftrue": "0",
         "iffalse": "2",
-        "iffalseVal": "13"
+        "iffalseVal": "10"
       },
       "name": "Check Variable"
     },
@@ -188,8 +188,8 @@
                   "author": "",
                   "authorUrl": "",
                   "authorIcon": "",
-                  "footerText": "${tempVars(\"member_tag\")}",
-                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                  "footerText": "",
+                  "footerIconUrl": ""
                 }
               ],
               "reply": true,
@@ -237,12 +237,12 @@
                   "author": "",
                   "authorUrl": "",
                   "authorIcon": "",
-                  "footerText": "${tempVars(\"member_tag\")}",
+                  "footerText": "",
                   "footerIconUrl": ""
                 }
               ],
               "reply": true,
-              "ephemeral": true,
+              "ephemeral": false,
               "tts": false,
               "overwrite": false,
               "dontSend": false,
@@ -291,6 +291,5 @@
       "choices": null
     }
   ],
-  "description": "Daj komuś reputacje!",
-  "_timeRestriction": 300
+  "description": "Daj komuś reputacje!"
 }
