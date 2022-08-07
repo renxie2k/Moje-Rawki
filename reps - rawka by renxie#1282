@@ -1,35 +1,69 @@
 {
-  "name": "reps",
+  "name": "rep",
   "permissions": "NONE",
   "permissions2": "NONE",
   "restriction": "1",
-  "_id": "VSAxv",
+  "_id": "heDBi",
   "actions": [
     {
-      "member": "1",
-      "varName": "",
-      "dataName": "rep-neg",
-      "defaultVal": "0",
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "1",
       "storage": "1",
-      "varName2": "negativ",
-      "name": "Store Member Data"
+      "varName2": "u_id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "16",
+      "storage": "1",
+      "varName2": "u_avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "21",
+      "storage": "1",
+      "varName2": "member_tag",
+      "name": "Store Member Info"
     },
     {
       "member": "1",
       "varName": "",
-      "dataName": "rep-poz",
-      "defaultVal": "0",
+      "info": "16",
       "storage": "1",
-      "varName2": "pozytywna",
-      "name": "Store Member Data"
+      "varName2": "command_avatar",
+      "name": "Store Member Info"
     },
     {
-      "FirstNumber": "${tempVars(\"pozytywna\")}",
-      "info": "0",
-      "SecondNumber": "${tempVars(\"negativ\")}",
+      "member": "1",
+      "varName": "",
+      "info": "1",
       "storage": "1",
-      "varName": "rep-all",
-      "name": "Basic Math Operation"
+      "varName2": "id",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "21",
+      "storage": "1",
+      "varName2": "command_tag",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "u_id",
+      "comparison": "1",
+      "value": "tempVars(\"id\")",
+      "branch": {
+        "iftrue": "0",
+        "iffalse": "2",
+        "iffalseVal": "13"
+      },
+      "name": "Check Variable"
     },
     {
       "channel": "0",
@@ -40,13 +74,13 @@
       "attachments": [],
       "embeds": [
         {
-          "title": "Twój stan reputacji",
+          "title": "",
           "url": "",
           "color": "RANDOM",
-          "timestamp": "true",
+          "timestamp": "false",
           "imageUrl": "",
           "thumbUrl": "",
-          "description": "**Wszystkie**\n> `${tempVars(\"rep-all\")}`\n\n**Pozytywne**\n> `${tempVars(\"pozytywna\")}`\n\n**Negatywne**\n> `${tempVars(\"negativ\")}`",
+          "description": "```CMD: Nie możesz nadać reputacji sobie samemu!```",
           "fields": [],
           "author": "",
           "authorUrl": "",
@@ -56,7 +90,7 @@
         }
       ],
       "reply": true,
-      "ephemeral": false,
+      "ephemeral": true,
       "tts": false,
       "overwrite": false,
       "dontSend": false,
@@ -65,9 +99,198 @@
       "storage": "0",
       "varName2": "",
       "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "5",
+      "varName": "użytkownik",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "13",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "",
+          "url": "",
+          "color": "",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "```CMD: Nie możesz nadac reputacji botowi```",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": true,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "4",
+      "varName": "typ",
+      "branches": [
+        {
+          "comparison": "1",
+          "value": "pozytywna",
+          "actions": [
+            {
+              "member": "5",
+              "varName": "użytkownik",
+              "dataName": "rep-poz",
+              "changeType": "0",
+              "value": "1",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "RANDOM",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "```CMD: Nadano pozytywną reputacje!```\n**Reputacje nadano:**\n└─ ${slashParams(\"użytkownik\")}\n**Powód**\n└─ ${slashParams(\"powód\")}\n**Typ reputacji:**\n└─ ${slashParams(\"typ\")}\n",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"member_tag\")}",
+                  "footerIconUrl": "${tempVars(\"member_avatar\")}"
+                }
+              ],
+              "reply": true,
+              "ephemeral": false,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        },
+        {
+          "comparison": "1",
+          "value": "negatywna",
+          "actions": [
+            {
+              "member": "5",
+              "varName": "użytkownik",
+              "dataName": "rep-neg",
+              "changeType": "0",
+              "value": "1",
+              "name": "Control Member Data"
+            },
+            {
+              "channel": "0",
+              "varName": "",
+              "message": "",
+              "buttons": [],
+              "selectMenus": [],
+              "attachments": [],
+              "embeds": [
+                {
+                  "title": "",
+                  "url": "",
+                  "color": "",
+                  "timestamp": "true",
+                  "imageUrl": "",
+                  "thumbUrl": "",
+                  "description": "```CMD: Nadano negatywną reputacje!```\n**Reputacje nadano:**\n└─ ${slashParams(\"użytkownik\")}\n**Powód**\n└─ ${slashParams(\"powód\")}\n**Typ reputacji:**\n└─ ${slashParams(\"typ\")}\n",
+                  "fields": [],
+                  "author": "",
+                  "authorUrl": "",
+                  "authorIcon": "",
+                  "footerText": "${tempVars(\"member_tag\")}",
+                  "footerIconUrl": ""
+                }
+              ],
+              "reply": true,
+              "ephemeral": true,
+              "tts": false,
+              "overwrite": false,
+              "dontSend": false,
+              "editMessage": "0",
+              "editMessageVarName": "",
+              "storage": "0",
+              "varName2": "",
+              "name": "Send Message"
+            }
+          ]
+        }
+      ],
+      "name": "Multi-Check Variable"
     }
   ],
   "comType": "4",
-  "parameters": [],
-  "description": "Sprawdz swoje reputacje"
+  "parameters": [
+    {
+      "name": "użytkownik",
+      "description": "",
+      "type": "USER",
+      "required": true,
+      "choices": null
+    },
+    {
+      "name": "typ",
+      "description": "",
+      "type": "STRING",
+      "required": true,
+      "choices": [
+        {
+          "name": "pozytywna",
+          "value": "pozytywna"
+        },
+        {
+          "name": "negatywna",
+          "value": "negatywna"
+        }
+      ]
+    },
+    {
+      "name": "powód",
+      "description": "",
+      "type": "STRING",
+      "required": true,
+      "choices": null
+    }
+  ],
+  "description": "Daj komuś reputacje!",
+  "_timeRestriction": 300
 }
