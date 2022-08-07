@@ -1,0 +1,177 @@
+{
+  "name": "join",
+  "temp": "joined",
+  "event-type": "6",
+  "_id": "lwcqu",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "joined",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatar",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "joined",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "28",
+      "storage": "1",
+      "varName2": "offline",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "26",
+      "storage": "1",
+      "varName2": "nieprzesz",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "29",
+      "storage": "1",
+      "varName2": "idlemem",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "27",
+      "storage": "1",
+      "varName2": "online",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "sername",
+      "name": "Store Server Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "icon",
+      "name": "Store Server Info"
+    },
+    {
+      "FirstNumber": "${tempVars(\"online\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"offline\")}",
+      "storage": "1",
+      "varName": "everyoe",
+      "name": "Basic Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"nieprzesz\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"idlemem\")}",
+      "storage": "1",
+      "varName": "every2",
+      "name": "Basic Math Operation"
+    },
+    {
+      "FirstNumber": "${tempVars(\"everyoe\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"every2\")}",
+      "storage": "1",
+      "varName": "everyone",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "1",
+      "varName": "joinlist",
+      "name": "Create List"
+    },
+    {
+      "storage": "1",
+      "varName": "joinlist",
+      "addType": "0",
+      "position": "",
+      "value": "Na góże róże na dole fiołki tempVars(\"sername\") i ty to ziomki",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "joinlist",
+      "addType": "0",
+      "position": "",
+      "value": "\"Z pewnością znajdziesz tutaj coś dla siebie.\"",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "joinlist",
+      "addType": "0",
+      "position": "",
+      "value": "\"Mamy nadzieje, że zostaniesz z nami na dłużej!\"",
+      "name": "Add Item to List"
+    },
+    {
+      "storage": "1",
+      "varName": "joinlist",
+      "addType": "0",
+      "position": "",
+      "value": "\"Miło nam cię widzieć\"",
+      "name": "Add Item to List"
+    },
+    {
+      "list": "7",
+      "varName": "joinlist",
+      "getType": "2",
+      "position": "",
+      "storage": "1",
+      "varName2": "itemjoin",
+      "name": "Get Item from List"
+    },
+    {
+      "channel": "103",
+      "varName": "1005788658890199070",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "${tempVars(\"sername\")}",
+          "url": "",
+          "color": "#6aff00",
+          "timestamp": "true",
+          "imageUrl": "",
+          "thumbUrl": "${tempVars(\"avatar\")}",
+          "description": "${tempVars(\"joined\")} **zawitał na nasz serwer**\n${tempVars(\"itemjoin\")}",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "jesteś naszym ${tempVars(\"everyone\")} użytkownikiem",
+          "footerIconUrl": "${tempVars(\"avatar\")}"
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
